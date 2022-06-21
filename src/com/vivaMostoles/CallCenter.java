@@ -1,16 +1,16 @@
 package com.vivaMostoles;
 import java.util.concurrent.Semaphore;
 public class CallCenter {
-    private static int numberOfCallCenterManagers;
+    private static int numberOfCallCenterManagers = 3;
     //Парковочное место занято - true, свободно - false
     private static final boolean[] CALLCENTER_NUMBER_OF_OPERATERS = new boolean[numberOfCallCenterManagers];
     //Устанавливаем флаг "справедливый", в таком случае метод
     //aсquire() будет раздавать разрешения в порядке очереди
-    private static int numberOfCalls;
+    private static int numberOfCalls = 10;
     private static final Semaphore SEMAPHORE = new Semaphore(numberOfCalls, true);
 
     public static void main(String[] args) throws InterruptedException {
-        for (int i = 1; i <= 25; i++) {
+        for (int i = 1; i <= numberOfCalls; i++) {
             new Thread(new Customer(i)).start();
             Thread.sleep(500);
         }
@@ -34,7 +34,7 @@ public class CallCenter {
 
                 //Ищем свободное место и паркуемся
                 synchronized (CALLCENTER_NUMBER_OF_OPERATERS){
-                    for (int i = 1; i <= 5; i++)
+                    for (int i = 1; i <= numberOfCallCenterManagers; i++)
                         if (!CALLCENTER_NUMBER_OF_OPERATERS[i]) {      //Если место свободно
                             CALLCENTER_NUMBER_OF_OPERATERS[i] = true;  //занимаем его
                             operatorNumber = i;         //Наличие свободного места, гарантирует семафор
