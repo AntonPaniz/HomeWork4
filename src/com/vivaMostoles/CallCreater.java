@@ -7,7 +7,7 @@ public class CallCreater extends InterruptedException {
      try {
          for (int i = 1; i <= numberOfCalls; i++) {
              new Thread(new CustomerSettings(i)).start();
-             Thread.sleep(1500);
+             Thread.sleep(400);
          }
      } catch (InterruptedException e){
     }}}
