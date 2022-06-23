@@ -1,8 +1,6 @@
-package src.com.vivaMostoles;
+package src.com.vivaMostoles.SolutionWithSemaphore;
 
 import java.util.concurrent.Semaphore;
-
-import static com.vivaMostoles.CallCenter.SEMAPHORE;
 
 
 public class CustomerSettings implements Runnable {

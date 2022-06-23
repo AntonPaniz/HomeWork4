@@ -1,6 +1,4 @@
-package com.vivaMostoles;
-import src.com.vivaMostoles.CallCreater;
-import src.com.vivaMostoles.CustomerSettings;
+package src.com.vivaMostoles.SolutionWithSemaphore;
 
 import java.util.concurrent.Semaphore;
 public class CallCenter {

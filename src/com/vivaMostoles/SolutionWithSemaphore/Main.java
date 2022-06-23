@@ -1,6 +1,4 @@
-package src.com.vivaMostoles;
-
-import java.util.concurrent.Semaphore;
+package src.com.vivaMostoles.SolutionWithSemaphore;
 
 public class Main {
     public static void main(String[] args) {

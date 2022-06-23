@@ -1,6 +1,4 @@
-package src.com.vivaMostoles;
-
-import com.vivaMostoles.CallCenter;
+package src.com.vivaMostoles.SolutionWithSemaphore;
 
 public class CallCreater extends InterruptedException {
     public static void callCreater(int numberOfCalls){
